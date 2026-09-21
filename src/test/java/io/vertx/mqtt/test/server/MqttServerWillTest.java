@@ -117,7 +117,6 @@ public class MqttServerWillTest {
     Async async = context.async();
     server.listen(context.asyncAssertSuccess(v -> {
       client = MqttClient.create(vertx, new MqttClientOptions()
-        .setWillFlag(false)
         .setWillRetain(true)
       );
       client.connect(MQTT_SERVER_PORT, MQTT_SERVER_HOST, ar -> {
@@ -138,7 +137,6 @@ public class MqttServerWillTest {
     Async async = context.async();
     server.listen(context.asyncAssertSuccess(v -> {
       client = MqttClient.create(vertx, new MqttClientOptions()
-        .setWillFlag(false)
         .setWillQoS(1)
       );
       client.connect(MQTT_SERVER_PORT, MQTT_SERVER_HOST, ar -> {
